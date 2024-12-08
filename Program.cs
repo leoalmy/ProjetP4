@@ -279,8 +279,14 @@ namespace ProjetP4
                 L6[i] = " ";
             }
             Console.WriteLine("Bienvenue dans le puissance 4");
-            Console.WriteLine("Le joueur 1 est représenté par les pions: 0 Jaune");
-            Console.WriteLine("Le joueur 2 est représenté par les pions: O Rouge");
+            Console.Write("Le joueur 1 est représenté par les pions: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("0 Jaune");
+            Console.ResetColor();
+            Console.Write("Le joueur 2 est représenté par les pions: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("O Rouge");
+            Console.ResetColor();
             Console.WriteLine("Pour démarrer appuyer sur Entrer");
             Console.WriteLine("");
             Console.WriteLine("Pour quitter appuyer sur la touche C");
