@@ -132,7 +132,7 @@ namespace ProjetP4
         }
         static bool PlacPon(ref string[] L1, ref string[] L2, ref string[] L3, ref string[] L4, ref string[] L5, ref string[] L6, int index, bool Player)
         {
-            index = index - 1;
+            index--;
             if (L1[index] == " ")
             {
                 if (L2[index] == " ")
@@ -254,15 +254,26 @@ namespace ProjetP4
         {
             Console.Clear();
             DisplayTab(L1, L2, L3, L4, L5, L6, P1ORP2);
-            Console.WriteLine("Joueur 1 à toi !!");
+            Console.Write("Joueur ");
+            if (Convert.ToInt32(P1ORP2) == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(2);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(1);
+            }
+            Console.ResetColor();
+            Console.WriteLine(" à toi !!");
             Console.WriteLine("Choisis la colonne dans laquelle tu veux mettre la pièce");
             int inputP = Convert.ToInt32(Console.ReadLine());
-            PlacPon(ref L1, ref L2, ref L3, ref L4, ref L5, ref L6, inputP, P1ORP2);
-            if (P1ORP2)
+            if (P1ORP2 && PlacPon(ref L1, ref L2, ref L3, ref L4, ref L5, ref L6, inputP, P1ORP2))
             {
                 P1ORP2 = false;
             }
-            else 
+            else if (!P1ORP2 && PlacPon(ref L1, ref L2, ref L3, ref L4, ref L5, ref L6, inputP, P1ORP2))
             {
                 P1ORP2 = true;
             }
@@ -326,10 +337,10 @@ namespace ProjetP4
             while (!gameover)
             {
                 Players();
-                if (ChekW() == true)
-                {
-                    break;
-                }
+                 if (ChekW() == true)
+                 {
+                     break;
+                 }
 
             }
         }
