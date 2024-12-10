@@ -300,7 +300,7 @@ namespace ProjetP4
             Console.ResetColor();
             Console.WriteLine("Pour démarrer appuyer sur Entrer");
             Console.WriteLine("");
-            Console.WriteLine("Pour quitter appuyer sur la touche C");
+            Console.WriteLine("Pour quitter appuyer sur la touche Q");
             Console.WriteLine("");
         }
         static void StartOrQuitGame()
@@ -315,7 +315,7 @@ namespace ProjetP4
                     EndGame();
                     break;
                 }
-                else if (KeyInput == Convert.ToString(ConsoleKey.C))
+                else if (KeyInput == Convert.ToString(ConsoleKey.Q))
                 {
                     Console.Clear();
                     Console.WriteLine("Êtes-vous sure de vouloir quitter ?");
